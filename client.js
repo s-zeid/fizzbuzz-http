@@ -158,7 +158,7 @@ function stripHTML(html) {
 }
 
 if (!BROWSER) {
- var server = "http://[::1]/~/src/me/fizzbuzz-http/server.php?";
+ var server = "http://fizzbuzz-http.s.zeid.me/server.php?";
  if (typeof process != "undefined" && typeof process.ececArgv == "object") {
   var server = process.execArgv[1] || server;
  }
