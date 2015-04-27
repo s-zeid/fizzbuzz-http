@@ -101,6 +101,7 @@ function main() {
     
   --><!-- }}} -->
   <title><?php echo request("/fizz/text").request("/buzz/text"); ?></title>
+  <meta name="viewport" content="width=device-width; minimum-scale=1.0; initial-scale=1.0" />
   <link rel="stylesheet" type="text/css" href="https://s.zeid.me/styles/basic.css" />
  </head>
  <body>
