@@ -33,7 +33,7 @@
 }}}*/
 
 $config = [
- "server" => "http://[::1]/~/src/me/fizzbuzz-http/server.php?"
+ "server" => "http://fizzbuzz-http.s.zeid.me/server.php?"
 ];
 
 if (is_file("client.conf"))
