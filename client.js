@@ -159,8 +159,12 @@ function stripHTML(html) {
 
 if (!BROWSER) {
  var server = "http://fizzbuzz-http.s.zeid.me/server.php?";
- if (typeof process != "undefined" && typeof process.ececArgv == "object") {
-  var server = process.execArgv[1] || server;
+ if (typeof process != "undefined" && typeof process.argv == "object") {
+  var path = require("path");
+  if (path.resolve(process.argv[0]) == path.resolve(process.execPath))
+   var server = process.argv[1] || server;
+  else
+   var server = process.argv[2] || server;
  }
  fizzbuzz(server);
 }
