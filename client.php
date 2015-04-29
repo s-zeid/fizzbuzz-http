@@ -36,8 +36,8 @@ $config = [
  "server" => "http://fizzbuzz-http.s.zeid.me/server.php?"
 ];
 
-if (is_file("client.conf"))
- $config = array_merge($config, parse_ini_file("client.conf"));
+if (is_file("client.php.conf"))
+ $config = array_merge($config, parse_ini_file("client.php.conf"));
 
 function request($url = "", $method = "", $_get = [], $_post = []) {
  global $config;
