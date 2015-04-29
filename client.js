@@ -151,10 +151,8 @@ function request(url, method, params, success, error) {
 };
 
 function stripHTML(html) {
- if (typeof html === "string")
-  return html.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
- else
-  return html;
+ html = String(html);
+ return html.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;");
 }
 
 if (!BROWSER) {
