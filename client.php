@@ -39,9 +39,20 @@ $config = [
 if (is_file("client.php.conf"))
  $config = array_merge($config, parse_ini_file("client.php.conf"));
 
+function http_get($url) {
+ $ctx = stream_context_create(["http" => [
+  "method" => "GET",
+  "user_agent" => "fizzbuzz-http/client.php",
+ ]]);
+ $stream = fopen($url, 'r', false, $ctx);
+ $result = stream_get_contents($stream);
+ fclose($stream);
+ return $result;
+}
+
 function request($url = "", $method = "", $_get = [], $_post = []) {
  global $config;
- $j = file_get_contents("{$config["server"]}{$url}");
+ $j = http_get("{$config["server"]}{$url}");
  return json_decode($j, true);
 }
 
