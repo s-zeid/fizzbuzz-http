@@ -34,7 +34,7 @@
 
 require("app.php");
 
-$app = new App("fizzbuzz-api");
+$app = new App("fizzbuzz-http/server.php");
 
 $app->get(["/start"], function($params) {
  return result(1);
