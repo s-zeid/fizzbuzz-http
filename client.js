@@ -121,7 +121,7 @@ function request(url, method, params, success, error) {
  } else {
   var options = require("url").parse(url);
   options.method = method;
-  options.headers = {"User-Agent": "node.js"};
+  options.headers = {"User-Agent": "fizzbuzz-http/client.js"};
   if (options.hostname.indexOf(":") >= 0)
    options.headers["Host"] = "[" + options.hostname + "]";
   if (params != null && typeof(params) === "object")
